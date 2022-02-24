@@ -339,28 +339,34 @@ import { mapGetters, mapActions } from 'vuex'
 import PieChart from '../components/charts/PieChart'
 import { EnsoChartCard as ChartCard } from '@enso-ui/charts/bulma';
 import { Chart, colors } from '@enso-ui/charts';
+import { ref, computed } from 'vue';
+
 export default {
   layout: 'auth',
-  components: {
-    Loading,
-    PieChart,
-    ChartCard
-  },
-  inject: ['errorHandler', 'route', 'toastr'],
-  //middleware: ['permission', 'verification'],
+  components: { Loading, PieChart, ChartCard },
   meta: {
     permission: { name: 'dashboard menu' },
     title: 'Dashboard',
   },
+  
+  setup() {
+    const inject = ref(['errorHandler', 'route', 'toastr']);
+    
+    const loaded = ref('false');
+    const trees = ref([]);
+    const companies = ref([]);
+    const selected_company = ref(null);
+    const selected_tree = ref(null);
+    const isLoading = ref('false');
+    const fullPage = ref('true');
+
+
+  },
+}
+
+export default {
   data() {
     return {
-      loaded: false,
-      trees: [],
-      companies: [],
-      selected_company: null,
-      selected_tree: null,
-      isLoading: false,
-      fullPage: true,
       color: '#4fcf8d',
       changedb: null,
       backgroundColor: '#ffffff',
