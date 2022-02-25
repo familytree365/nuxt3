@@ -99,6 +99,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Confirmation from '@enso-ui/confirmation/bulma';
 import Inputor from './Inputor.vue';
+import { ref, computed, useStore, watch } from 'vue';
 
 library.add(faPencilAlt, faTrashAlt, faCheck, faBan);
 
@@ -129,7 +130,11 @@ export default {
             default: false,
         },
     },
-
+    setup() {
+        const controls = ref(false)
+        const confirmation = ref(false)
+        const originalBody = ref(null)
+    }
     data: () => ({
         controls: false,
         confirmation: false,
