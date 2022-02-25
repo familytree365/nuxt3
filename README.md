@@ -9,7 +9,7 @@
 Browser based Genealogy software for interacting and processing data efficiently. Easily create your
 own family tree by importing your existing data or manual data entry. Storage of all data is securely on your own server and does
 not leave your environment without your permission. In the future there will be optional
-smart matching with other servers. This is the Nuxt client for the backend please see https://github.com/familytree365/genealogy
+smart matching with other servers. This is the Nuxt (3) client for the backend please see https://github.com/familytree365/genealogy
 
 ## Demo
 
