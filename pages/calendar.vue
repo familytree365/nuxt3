@@ -32,32 +32,34 @@ import CalendarFilter from '~/components/calendar/bulma/pages/calendar/component
 import EventForm from '~/components/calendar/bulma/pages/calendar/components/EventForm.vue';
 import { ref, computed } from 'vue';
 
-export default {
-    meta: {
-        breadcrumb: 'calendar',
-        title: 'Calendar',
-    },
-    
-    components: { EnsoCalendar, CalendarFilter, EventForm },
-    setup() {
-        const inject = ref(['errorHandler', 'route']);
-        const event = ref(null);
-        const selectedDate = ref(null);
-        const calendars = ref(['']);
-        return { event, selectedDate, calendars };
-        created(() => {
-            this.hideFooter();
-        });
-        onBeforeUnmount(() => {
-            this.showFooter();
-        });
-        return{
-            ...mapMutations('layout', ['showFooter', 'hideFooter']);
-        };
-        function reloadEvents() {
-            this.$refs.calendar.fetch();
-            this.event = null;
-        };
-    },
-};
+    export default {
+        meta: {
+            breadcrumb: 'calendar',
+            title: 'Calendar',
+        },
+
+        components: { EnsoCalendar, CalendarFilter, EventForm },
+        setup() {
+            const inject = ref(['errorHandler', 'route']);
+            const event = ref(null);
+            const selectedDate = ref(null);
+            const calendars = ref(['']);
+            return { event, selectedDate, calendars };
+            created(() => {
+                this.hideFooter();
+            });
+            onBeforeUnmount(() => {
+                this.showFooter();
+            });
+            return{
+                ...mapMutations('layout', ['showFooter', 'hideFooter']);
+            };
+            function reloadEvents() {
+                this.$refs.calendar.fetch();
+                this.event = null;
+            };
+        },
+    };
+
+
 </script>
