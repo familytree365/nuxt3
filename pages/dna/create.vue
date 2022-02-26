@@ -29,9 +29,12 @@
                             <div v-if="error" class="notification is-danger">
                                 {{ message }}
                             </div>
-                            <div v-for="error in errors" class="notification is-danger">
+                            <div class="notification is-danger" v-for="error in errors" :key="error">
                                 {{ error[0] }}
                             </div>
+                            <!-- <div v-for="error in errors" class="notification is-danger">
+                                {{ error[0] }}
+                            </div> -->
                             <input type="hidden" v-model="fileName">
                             <div class="field import_block">
                                 <div class="file is-large is-boxed has-background-primary">

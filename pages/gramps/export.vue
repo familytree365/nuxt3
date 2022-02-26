@@ -28,7 +28,7 @@
             <div v-if="error" class="notification is-danger">
               {{ message }}
             </div>
-            <div v-for="error in errors" class="notification is-danger">
+            <div v-for="error in errors" :key="error" class="notification is-danger">
               {{ error[0] }}
             </div>
             <div class="field import_block">

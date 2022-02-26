@@ -30,7 +30,7 @@
                                 <div v-if="error" class="notification is-danger">
                                     {{ message }}
                                 </div>
-                                <div v-for="error in errors" class="notification is-danger">
+                                <div v-for="error in errors" :key="error" class="notification is-danger">
                                     {{ error[0] }}
                                 </div>
                                 <input type="hidden" v-model="fileName" v-if="!isLoading">

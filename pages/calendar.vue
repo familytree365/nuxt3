@@ -17,6 +17,7 @@
             @close="event = null"
             @destroy="reloadEvents"
             v-if="event"/>
+            
     </div>
 </template>
 <router>
@@ -52,7 +53,7 @@ import { ref, computed } from 'vue';
                 this.showFooter();
             });
             return{
-                ...mapMutations('layout', ['showFooter', 'hideFooter']);
+                ...mapMutations('layout', ['showFooter', 'hideFooter'])
             };
             function reloadEvents() {
                 this.$refs.calendar.fetch();
